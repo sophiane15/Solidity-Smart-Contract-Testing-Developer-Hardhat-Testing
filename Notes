@@ -1,0 +1,57 @@
+
+
+
+Comparaison :
+Fichier	               Valeur en ETH	     Valeur en Wei
+deploy.js	           0.000000001 ETH     	 1,000,000,000
+test.js	               0.000000001 ETH	     1,000,000,000
+Résultat	           ✅ Identiques !	    ✅ Identiques !
+
+
+
+
+loadFixture = "Prends le code Solidity, compile-le, et déploie un nouveau contrat à chaque fois" 🔄
+C'est comme construire une nouvelle maison à chaque test, même si c'est le même plan ! 🏠✨
+loadFixture fait ça :
+À chaque test :
+   - Lit le code Solidity de ton contrat Mytest.sol
+   - Compile le contrat (génère le bytecode)
+   - Déploie un NOUVEAU contrat sur la blockchain virtuelle
+   - Retourne l'adresse du nouveau contrat
+
+// Test 1
+const { mytest } = await loadFixture(deployOneYearLockFixture);
+// mytest = contrat à l'adresse 0x123...abc
+
+// Test 2  
+const { mytest } = await loadFixture(deployOneYearLockFixture);
+// mytest = contrat à l'adresse 0x456...def (DIFFÉRENTE !)
+
+
+
+getContractFactory = "Prépare tout ce qu'il faut pour déployer le contrat" 🔧
+  const Mytest = await ethers.getContractFactory("Mytest");
+
+
+
+to.be.revertedWith = "Vérifie que le contrat refuse avec le bon message d'erreur" 🔒
+    await expect(Mytest.deploy(latestTime, { value: 1 }))
+         .to.be.revertedWith("Unlock time is in the past");
+
+
+Étapes pour pousser sur GitHub :
+1. Initialiser Git (si pas déjà fait) :
+    git init
+    
+2. Créer un fichier .gitignore :
+
+3. Ajouter tous les fichiers :
+    git add .
+
+4. Faire le premier commit :
+     $ git commit -m "Initial commit: Smart Contract Testing with Hardhat 2
+
+5- Une fois le repository créé, GitHub te donnera des commandes comme :
+    git remote add origin https://github.com/TON-USERNAME/solidity-smart-contract-testing-hardhat.git
+    git branch -M main
+    git push -u origin main
