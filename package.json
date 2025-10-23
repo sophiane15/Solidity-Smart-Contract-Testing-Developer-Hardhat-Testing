@@ -1,0 +1,18 @@
+{
+  "name": "solidity-smart-contract-testing-developer-hardhat-testing",
+  "version": "1.0.0",
+  "description": "hardhat-testing",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@nomicfoundation/hardhat-toolbox": "^5.0.0",
+    "@types/node": "^22.18.11",
+    "forge-std": "github:foundry-rs/forge-std#v1.9.4",
+    "hardhat": "^2.26.3",
+    "typescript": "~5.8.0"
+  }
+}
